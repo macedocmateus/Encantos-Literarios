@@ -63,7 +63,12 @@ body {
     background-size: cover;
     background-position: bottom;
     object-fit: cover;
-    padding: 1.25rem 1.25rem 24.75rem 1.25rem;;
+    padding: 1.25rem 1.25rem 0 1.25rem;
+}
+
+.hero-informations {
+    width: 20.9rem;
+    margin: 0 auto;
 }
 
 nav {
@@ -84,8 +89,8 @@ nav button {
 .hero-title {
     display: flex;
     flex-direction: column;
-    text-align: center;
     margin-top: 3rem;
+    text-align: center;
     gap: 1rem;
 }
 
