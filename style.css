@@ -52,8 +52,8 @@
 }
 
 body {
-    min-height: 100dvh;
     background-color: var(--color-shape-background);
+    min-height: 100dvh;
 }
 
 .hero {
@@ -142,5 +142,33 @@ nav button {
     text-align: center;
     width: 20.9rem;
     font: 500 1rem/1.4 var(--font-family);
+    color: var(--color-text-body);
+}
+
+.product-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.product-title div {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.product-title div h2 {
+    font: 700 1.5rem/normal var(--font-family);
+    color: var(--color-text-body);
+}
+
+.product-title div img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.product-title p {
+    font: var(--font-body-sm);
     color: var(--color-text-body);
 }
