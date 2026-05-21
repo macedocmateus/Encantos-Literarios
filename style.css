@@ -20,14 +20,14 @@
     --color-text-label: #bac6c9;
 
     --font-family: 'Raleway', sans-serif;
-    
+
     --font-title-lg: 700 3rem/normal var(--font-family);
     --font-title-md: 700 2.5rem/normal var(--font-family);
     --font-title-sm: 700 2rem/normal var(--font-family);
     --font-title-xs: 700 1rem/normal var(--font-family);
-    
+
     --font-subtitle: 500 2rem/2.0 var(--font-family);
-    
+
     --font-body-lg: 400 1.25rem/1.4 var(--font-family);
     --font-body-md: 400 1rem/1.4 var(--font-family);
     --font-body-sm: 400 0.875rem/1.4 var(--font-family);
@@ -53,122 +53,142 @@
 
 body {
     background-color: var(--color-shape-background);
+    min-height: 100vh;
     min-height: 100dvh;
-}
-
-.hero {
-    height: 29rem;
-    background-image: url(./assets/hero-image.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
-    object-fit: cover;
-    padding: 1.25rem 1.25rem 0 1.25rem;
-}
-
-.hero-informations {
-    width: 20.9rem;
-    margin: 0 auto;
-}
-
-nav {
+    font-family: var(--font-family);
+    overflow-x: hidden;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
 }
 
-nav button {
+.container {
+    max-width: 23.5rem;
+    width: min(100%, 23.5rem);
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-background {
+    height: 29rem;
     padding-inline: 1.25rem;
+    padding-block: 1.25rem 0;
+    background-image: url("./assets/hero-image.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-background nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-background nav button {
+    width: 5.5rem;
     height: 2.5rem;
-    border-radius: 0.5rem;
     background-color: var(--color-pink-dark);
     color: var(--color-text-title);
     font: var(--font-button);
+    border-radius: 0.5rem;
+    cursor: pointer;
 }
 
-.hero-title {
+.hero-content {
     display: flex;
     flex-direction: column;
-    margin-top: 3rem;
-    text-align: center;
     gap: 1rem;
+    margin-top: 3rem;
 }
 
-.hero-title h1 {
-    font: 700 1.75rem/normal var(--font-family);
+.hero-content .hero-title {
     color: var(--color-text-title);
+    font: 700 1.75rem/normal var(--font-family);
+    text-align: center;
 }
 
-.hero-title p {
-    font: var(--font-body-sm);
+.hero-content .hero-description {
     color: var(--color-text-body);
+    font: var(--font-body-sm);
+    text-align: center;
 }
 
-.description {
+.hero-info {
+    margin-top: 2rem;
+    height: 15.75rem;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 23.4rem;
-    height: 15.75rem;
-    margin-block: 2rem 6.5rem;
-    margin-inline: auto;
     position: relative;
-}
 
-.description img {
+    &::before {
+    content: "";
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--color-pink-low);
+    border-radius: 50%;
+    filter: blur(180px);
     position: absolute;
-    width: 2.5rem;
-    height: 2.5rem;
+    pointer-events: none;
+    left: -2rem;
+    top: 50%;
+    translate: 0 -50%;
+    z-index: -1;
+    }
+
+    &::after {
+    content: "";
+    width: 15rem;
+    height: 15rem;
+    background-color: var(--color-pink-low);
+    border-radius: 50%;
+    filter: blur(150px);
+    position: absolute;
+    pointer-events: none;
+    right: -9rem;
+    bottom: 8rem;
+    z-index: -1;
+    }
 }
 
-.spellbook {
-    bottom: 10.9rem;
-    left: 15.8rem;
+.hero-info p {
+    color: var(--color-text-body);
+    font: var(--font-body-md);
+    max-width: 21rem;
+    text-align: center;
 }
 
-.ouija-planchette {
-    bottom: 3.20rem;
-    left: 1.25rem;
+.hero-info .ouija-planchette {
+    width: 2rem;
+    height: 2rem;
+    object-fit: cover;
+    position: absolute;
+    bottom: 60px;
+    left: 25px;
     rotate: 325deg;
 }
 
-.crystal-ball {
-    bottom: 2rem;
-    right: 1.27rem;
+.hero-info .crystall-ball {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    position: absolute;
+    bottom: 40px;
+    right: 25px;
+    rotate: 15deg;
 }
 
-.description p {
-    text-align: center;
-    width: 20.9rem;
-    font: 500 1rem/1.4 var(--font-family);
-    color: var(--color-text-body);
+.hero-info .spellbook {
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: cover;
+    position: absolute;
+    top: 35px;
+    right: 90px;
+    rotate: 30deg;
 }
 
-.product-title {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.product-title div {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.product-title div h2 {
-    font: 700 1.5rem/normal var(--font-family);
-    color: var(--color-text-body);
-}
-
-.product-title div img {
-    width: 1.25rem;
-    height: 1.25rem;
-}
-
-.product-title p {
-    font: var(--font-body-sm);
-    color: var(--color-text-body);
+.contact {
+    margin-top: auto;
 }
