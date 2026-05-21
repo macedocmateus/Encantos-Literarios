@@ -189,6 +189,154 @@ body {
     rotate: 30deg;
 }
 
+.kit {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    height: 39.5rem;
+}
+
+.kit-content  {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+    padding-block: 6.5rem 0;
+}
+
+.kit-content div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.kit-content img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.kit-content h1 {
+    color: var(--color-text-body);
+    font: 700 1.5rem/normal var(--font-family);
+}
+
+.kit-content p {
+    color: var(--color-text-body);
+    font: var(--font-body-sm);
+}
+
+.kit-illustrations {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    &::before {
+    content: "";
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--color-pink-low);
+    border-radius: 50%;
+    filter: blur(150px);
+    position: absolute;
+    pointer-events: none;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    z-index: -2;
+    }
+}
+
+.kit-illustrations .book {
+    width: 9.875rem;
+    height: 13rem;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.kit-illustrations .bookmark-yellow {
+    width: 3.625rem;
+    height: 11.25rem;
+    position: absolute;
+    top: -2rem;
+    right: 4.5rem;
+    rotate: 8deg;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.kit-illustrations .bookmark-purple {
+    width: 3.625rem;
+    height: 11.25rem;
+    position: absolute;
+    top: -0.5rem;
+    right: 2.5rem;
+    rotate: 19deg;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.kit-illustrations .pin {
+    width: 4.625rem;
+    height: 5.375rem;
+    position: absolute;
+    top: 10rem;
+    left: 4rem;
+    rotate: -10deg;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.kit-illustrations .arrow-book {
+    width: 3.625rem;
+    height: 0.625rem;
+    position: absolute;
+    top: -0.3rem;
+    left: 4rem;
+    object-fit: cover;
+}
+
+.kit-illustrations .arrow-bookmark {
+    width: 3rem;
+    height: 3.125rem;
+    position: absolute;
+    bottom: -0.5rem;
+    right: 3.5rem;
+    object-fit: cover;
+}
+
+.kit-illustrations .arrow-pin {
+    width: 2.25rem;
+    height: 2.625rem;
+    position: absolute;
+    bottom: 1.8rem;
+    left: 2.9rem;
+    object-fit: cover;
+}
+
+.kit-illustrations .text-kit {
+    color: var(--color-text-body);
+    font: 400 0.625rem/normal var(--font-family);
+}
+
+.kit-illustrations .text-book {
+    position: absolute;
+    top: -1.5rem;
+    left: 1rem;
+}
+
+.kit-illustrations .text-bookmark {
+    position: absolute;
+    bottom: -1.5rem;
+    right: 3rem;
+}
+
+.kit-illustrations .text-pin {
+    position: absolute;
+    bottom: 5rem;
+    left: 2rem;
+}
+
 .contact {
     margin-top: auto;
 }
