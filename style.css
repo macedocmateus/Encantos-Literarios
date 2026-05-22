@@ -67,6 +67,7 @@ body {
     margin: 0 auto;
     flex-direction: column;
     justify-content: center;
+    overflow-x: hidden;
 }
 
 .hero-background {
@@ -335,6 +336,140 @@ body {
     position: absolute;
     bottom: 5rem;
     left: 2rem;
+}
+
+.plans {
+    display: flex;
+    flex-direction: column;
+    height: 44.5rem;
+    gap: 3rem;
+}
+
+.plans-title {
+    width: 13.875rem;
+    align-self: center;
+}
+
+.plans .plans-title h1 {
+    color: var(--color-text-body);
+    font: 700 1.5rem/normal var(--font-family);
+    text-align: center;
+}
+
+.plans-cards {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-inline: calc((100% - 17rem) / 2);
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.plans-cards .plans-card {
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    min-height: 25rem;
+    background-color: var(--color-shape-base);
+    padding-inline: 2rem;
+    padding-block: 2rem 1.75rem;
+    border-radius: 1.5rem;
+    border: 1px solid var(--color-shape-stroke);
+}
+
+.plans-card .billing-type {
+    color: var(--color-blue-light);
+    font: var(--font-title-xs);
+}
+
+.plans-card .wrapper-billing {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.plans-card .billing-type.best-price {
+    color: var(--color-pink-light);
+}
+
+.plans-card .wrapper-billing .tag-popular {
+    color: var(--color-text-body);
+    font: var(--font-tag);
+    background-color: var(--color-shape-stroke);
+    padding-inline: 1.25rem;
+    padding-block: 0.625rem;
+    border-radius: 999px;
+}
+
+.plans-card .price-monthly {
+    color: var(--color-text-title);
+    font: var(--font-title-md);
+    margin-block: 1.5rem 0.5rem;
+}
+
+.plans-card .price-type {
+    color: var(--color-text-title);
+    font: var(--font-title-xs);
+}
+
+.plans-card .price-annually {
+    color: var(--color-text-label);
+    font: var(--font-body-sm);
+    margin-bottom: 1.5rem;
+}
+
+.plans-card .card-descriptions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.card-descriptions .card-description {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-descriptions .card-description svg {
+    width: 0.875rem;
+    height: 0.875rem;
+}
+
+.card-descriptions .card-description svg path {
+    fill: var(--color-blue-base);
+}
+
+.card-descriptions .card-description.best-price svg path {
+    fill: var(--color-pink-base);
+}
+
+.card-descriptions .card-description span {
+    color: var(--color-text-body);
+    font: var(--font-body-xs);
+}
+
+.plans-card .submit-plan {
+    margin-top: auto;
+    background-color: var(--color-blue-dark);
+    color: var(--color-text-title);
+    font: var(--font-button);
+    width: 13rem;
+    height: 2.5rem;
+    padding-inline: 1.25rem;
+    border-radius: 0.5rem;
+}
+
+.plans-card .submit-plan.best-price {
+    background-color: var(--color-pink-dark);
 }
 
 .contact {
