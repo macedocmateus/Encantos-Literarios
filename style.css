@@ -474,4 +474,57 @@ body {
 
 .contact {
     margin-top: auto;
+    height: 26rem;
+    background-image: url("./assets/book-trace-background.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.contact-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-inline: 2rem;
+    margin-block: 6.125rem 2.375rem;
+    gap: 0.75rem;
+}
+
+.contact-head .contact-logo {
+    height: 2.5rem;
+}
+
+.divider {
+    width: 105%;
+    border: 1px solid #002347;
+}
+
+.contact-head .social-medias {
+    display: flex;
+    gap: 0.875rem;
+}
+
+.contact-footer .contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.contact-content .contact-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.contact-content-wrapper .contact-title {
+    color: var(--color-text-body);
+    font: var(--font-title-xs);
+}
+
+.contact-content-wrapper .contact-info {
+    color: var(--color-blue-light);
+    font: var(--font-link);
 }
