@@ -759,6 +759,7 @@ body {
 
   /* --- Navbar --- */
   .navbar {
+    max-width: 1286px;
     width: auto;
     left: 40px;
     right: 40px;
@@ -777,6 +778,7 @@ body {
     top: 550px;
     filter: blur(80px);
   }
+  
   .hero::after {
     width: 300px;
     height: 300px;
@@ -894,10 +896,7 @@ body {
   }
 
   /* --- Pricing --- */
-  .pricing__deco--1 { width: 24px; height: 24px; left: calc(50% - 473px); right: auto; top: 425px; }
-  .pricing__deco--2 { width: 12px; height: 12px; left: calc(50% - 484px); right: auto; top: 452px; }
-  .pricing__deco--3 { width: 22px; height: 22px; left: calc(50% + 408px); right: auto; top: 786px; }
-  .pricing__deco--4 { width: 11px; height: 11px; left: calc(50% + 381px); right: auto; top: 792px; }
+  .pricing__deco { display: none; }
 
   .pricing { min-height: 900px; }
   .pricing__header { padding-top: 140px; }
@@ -1034,6 +1033,10 @@ body {
 
   .kit__header {
     top: 104px;
+    left: 0;
+    right: 0;
+    transform: none;
+    justify-content: center;
     gap: 12px;
   }
   .kit__title { font-size: 1.5rem; }
