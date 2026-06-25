@@ -98,7 +98,6 @@
   }
 }
 
-/* ======================== GLOBAL ======================== */
 body {
   background: var(--color-shape-background);
   font-family: var(--font-family);
@@ -106,10 +105,8 @@ body {
   overflow-x: hidden;
 }
 
-/* ======================== LOGO TOGGLE ======================== */
 .navbar__logo--symbol { display: none; }
 
-/* ======================== COMPONENTS ======================== */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -139,7 +136,6 @@ body {
   color: var(--color-pink-base);
 }
 
-/* ======================== NAVBAR ======================== */
 .navbar {
   position: absolute;
   top: 56px;
@@ -156,7 +152,6 @@ body {
   width: auto;
 }
 
-/* ======================== HERO ======================== */
 .hero {
   position: relative;
   height: 1524px;
@@ -173,7 +168,6 @@ body {
   pointer-events: none;
 }
 
-/* Blur decorations via CSS — replaces deleted ellipse images */
 .hero::before,
 .hero::after {
   content: '';
@@ -223,7 +217,6 @@ body {
   margin: 0;
 }
 
-/* Message section (below hero image) */
 .hero__message {
   position: absolute;
   bottom: 80px;
@@ -244,7 +237,6 @@ body {
   text-align: center;
 }
 
-/* Mystery floating icons */
 .mystery {
   position: absolute;
   display: flex;
@@ -279,14 +271,12 @@ body {
   transform: translate(calc(-50% - 520px), calc(-50% + 82px)) rotate(99.47deg);
 }
 
-/* ======================== KIT ======================== */
 .kit {
   position: relative;
   height: 1586px;
   overflow: hidden;
 }
 
-/* Blur glow behind kit display */
 .kit::before {
   content: '';
   position: absolute;
@@ -301,7 +291,6 @@ body {
   pointer-events: none;
 }
 
-/* Blur grande cobrindo livro, marcadores e broche — centroide dos 4 elementos no display */
 .kit::after {
   content: '';
   position: absolute;
@@ -342,7 +331,6 @@ body {
   white-space: nowrap;
 }
 
-/* Kit images display — 1440×920 positioned container */
 .kit__display {
   position: absolute;
   width: 1440px;
@@ -352,7 +340,6 @@ body {
   transform: translateX(-50%);
 }
 
-/* Text labels */
 .kit__label {
   position: absolute;
   font: var(--font-body-md);
@@ -377,7 +364,6 @@ body {
   transform: translateX(-50%);
 }
 
-/* Kit arrows */
 .kit__arrow {
   position: absolute;
   pointer-events: none;
@@ -402,7 +388,6 @@ body {
   height: 151.5px;
 }
 
-/* Bookmark purple — center at (1099, 430), 172×536px, rotate 22deg */
 .kit__bookmark-purple {
   position: absolute;
   left: 1013px;
@@ -420,7 +405,6 @@ body {
   box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Bookmark yellow — center at (974, 326), 172×536px, rotate 12deg */
 .kit__bookmark-yellow {
   position: absolute;
   left: 888px;
@@ -438,7 +422,6 @@ body {
   box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Pin — center at (446, 710), 222×254px, rotate -8deg */
 .kit__pin {
   position: absolute;
   left: 335px;
@@ -449,7 +432,6 @@ body {
 }
 .kit__pin img { width: 100%; }
 
-/* Book — center at (707, 443), 467×617px */
 .kit__book {
   position: absolute;
   left: 473px;
@@ -459,7 +441,6 @@ body {
 }
 .kit__book img { width: 100%; }
 
-/* ======================== PRICING ======================== */
 .pricing {
   position: relative;
   min-height: 1234px;
@@ -474,7 +455,6 @@ body {
   pointer-events: none;
 }
 
-/* Estrelas decorativas fora dos cards — desktop e tablet apenas */
 .pricing__deco {
   position: absolute;
   color: var(--color-pink-base);
@@ -508,7 +488,6 @@ body {
   transform: rotate(8deg) scaleY(-1);
 }
 
-/* Blur glow */
 .pricing::before {
   content: '';
   position: absolute;
@@ -547,7 +526,6 @@ body {
   z-index: 1;
 }
 
-/* Plan cards */
 .plan {
   position: relative;
   width: 288px;
@@ -568,7 +546,6 @@ body {
   z-index: 2;
 }
 
-/* Bunny decoration on featured card */
 .plan__bunny {
   position: absolute;
   top: -50px;
@@ -582,7 +559,6 @@ body {
   object-fit: contain;
 }
 
-/* "popular" tag */
 .plan__tag {
   position: absolute;
   top: 24px;
@@ -663,7 +639,6 @@ body {
   color: var(--color-pink-base);
 }
 
-/* ======================== FOOTER ======================== */
 .footer {
   position: relative;
   height: 415px;
@@ -754,10 +729,188 @@ body {
 }
 .footer__link:hover { opacity: 0.7; }
 
-/* ======================== TABLET ======================== */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@media (min-width: 1440px) {
+  .hero__message-part {
+    opacity: 0.55;
+    transition: opacity 0.4s ease-in-out;
+  }
+  .hero__message-part:nth-child(2) { transition-delay: 0.2s; }
+  .hero__message-part:nth-child(3) { transition-delay: 0.4s; }
+  .hero__message:hover .hero__message-part {
+    opacity: 1;
+  }
+
+  .hero__bg {
+    animation: fade-in 2.5s ease both;
+  }
+  .hero__title {
+    animation: fade-in 2s ease 0.5s both;
+  }
+  .hero__body {
+    animation: fade-in 2s ease 1s both;
+  }
+
+  .mystery {
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+  }
+  .mystery img {
+    scale: 0.6;
+    transition: scale 0.4s ease-in-out;
+  }
+  .mystery--spellbook,
+  .mystery--spellbook img { transition-delay: 0s; }
+  .mystery--ouija,
+  .mystery--ouija img     { transition-delay: 0.15s; }
+  .mystery--ball,
+  .mystery--ball img      { transition-delay: 0.3s; }
+
+  .hero__message:hover .mystery {
+    opacity: 1;
+  }
+  .hero__message:hover .mystery img {
+    scale: 1;
+  }
+
+  .hero__message:hover .mystery--spellbook:hover {
+    transform: translate(calc(-50% - 14px), calc(-50% - 135px)) rotate(10deg);
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+  }
+  .hero__message:hover .mystery--spellbook:hover img {
+    scale: 1.08;
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+  }
+  .hero__message:hover .mystery--ouija:hover {
+    transform: translate(calc(-50% - 520px), calc(-50% + 82px)) rotate(89deg);
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+  }
+  .hero__message:hover .mystery--ouija:hover img {
+    scale: 1.08;
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+  }
+  .hero__message:hover .mystery--ball:hover {
+    transform: translate(calc(-50% + 558px), calc(-50% + 80px)) rotate(-4deg);
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+  }
+  .hero__message:hover .mystery--ball:hover img {
+    scale: 1.08;
+    transition-delay: 0s;
+    transition-duration: 0.25s;
+  }
+}
+
+@media (min-width: 1440px) {
+  .kit__bookmark-purple,
+  .kit__bookmark-yellow,
+  .kit__pin,
+  .kit__arrow--top,
+  .kit__arrow--middle,
+  .kit__arrow--down,
+  .kit__label--book,
+  .kit__label--brooch,
+  .kit__label--bookmark {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, translate 0.5s ease-in-out;
+  }
+
+  .kit__bookmark-purple  { translate: -393px 0px; }
+  .kit__bookmark-yellow  { translate: -268px 117px; }
+  .kit__pin              { translate: 260px -267px; }
+  .kit__arrow--top       { translate: 284px 313px; }
+  .kit__arrow--middle    { translate: 365px -120px; }
+  .kit__arrow--down      { translate: -353px -326px; }
+  .kit__label--book      { translate: 379px 373px; }
+  .kit__label--brooch    { translate: 371px -12px; }
+  .kit__label--bookmark  { translate: -280px -420px; }
+
+  .kit__display:hover .kit__bookmark-purple,
+  .kit__display:hover .kit__bookmark-yellow,
+  .kit__display:hover .kit__pin,
+  .kit__display:hover .kit__arrow--top,
+  .kit__display:hover .kit__arrow--middle,
+  .kit__display:hover .kit__arrow--down,
+  .kit__display:hover .kit__label--book,
+  .kit__display:hover .kit__label--brooch,
+  .kit__display:hover .kit__label--bookmark {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (min-width: 1440px) {
+  .plan--mensal,
+  .plan--anual {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, translate 0.5s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .plan--featured {
+    transition: translate 0.3s ease-in-out, background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  .plan--mensal { translate: 288px 0; }
+  .plan--anual  { translate: -288px 0; }
+
+  .pricing__deco--1,
+  .pricing__deco--2,
+  .pricing__deco--3,
+  .pricing__deco--4 {
+    transition: translate 0.55s ease-in-out, transform 0.25s ease-in-out;
+  }
+
+  .pricing:has(.plan--mensal:hover) .pricing__deco--1,
+  .pricing:has(.plan--mensal:hover) .pricing__deco--2 {
+    transform: rotate(-2deg) scaleY(-1);
+  }
+
+  .pricing:has(.plan--anual:hover) .pricing__deco--3,
+  .pricing:has(.plan--anual:hover) .pricing__deco--4 {
+    transform: rotate(2deg) scaleY(-1);
+  }
+
+  .pricing__deco--1 { translate: 280px -90px; }
+  .pricing__deco--2 { translate: 280px -90px; }
+  .pricing__deco--3 { translate: -275px -80px; }
+  .pricing__deco--4 { translate: -280px -75px; }
+
+  .pricing__table:hover .plan--mensal,
+  .pricing__table:hover .plan--anual {
+    opacity: 1;
+    translate: 0 0;
+  }
+
+  .pricing:has(.pricing__table:hover) .pricing__deco--1,
+  .pricing:has(.pricing__table:hover) .pricing__deco--2 {
+    translate: 0 0;
+  }
+
+  .pricing:has(.pricing__table:hover) .pricing__deco--3 {
+    translate: 0 -60px;
+  }
+
+  .pricing:has(.pricing__table:hover) .pricing__deco--4 {
+    translate: 0 -60px;
+  }
+
+  .pricing__table:hover .plan:hover {
+    translate: 0 -14px;
+    background-color: var(--color-blue-low);
+    box-shadow: 0 0 25px 4px rgba(35, 116, 164, 0.35);
+  }
+}
+
 @media (min-width: 769px) and (max-width: 1439px) {
 
-  /* --- Navbar --- */
   .navbar {
     max-width: 1286px;
     width: auto;
@@ -768,7 +921,6 @@ body {
   }
   .navbar__logo { height: 48px; }
 
-  /* --- Hero --- */
   .hero { height: 1150px; }
 
   .hero::before {
@@ -778,7 +930,7 @@ body {
     top: 550px;
     filter: blur(80px);
   }
-  
+
   .hero::after {
     width: 300px;
     height: 300px;
@@ -807,7 +959,7 @@ body {
     height: 360px;
     bottom: 60px;
   }
-  
+
   .hero__message-text {
     top: 120px;
     width: calc(100vw - 120px);
@@ -831,7 +983,6 @@ body {
     transform: translate(calc(-50% - 270px), calc(-50% + 62px)) rotate(99.47deg);
   }
 
-  /* --- Kit --- */
   .kit { height: 1050px; }
 
   .kit::before {
@@ -855,7 +1006,6 @@ body {
   .star { width: 26px; height: 26px; }
   .kit__subtitle { top: 228px; font-size: 0.9375rem; }
 
-  /* Kit display escalado para 900×575px (fator 0.625 do desktop 1440×920) */
   .kit__display {
     width: 900px;
     height: 575px;
@@ -867,7 +1017,6 @@ body {
   .kit__label--brooch   { left: 209px; top: 284px; }
   .kit__label--bookmark { left: 616px; top: 539px; }
 
-  /* Arrows — escalado 0.625 */
   .kit__arrow--top    { left: 209px;  top: 72px;  width: 109px; height: 19px; }
   .kit__arrow--middle { left: 180px;  top: 313px; width: 66px;  height: 79px; }
   .kit__arrow--down   { left: 616px;  top: 434px; width: 91px;  height: 95px; }
@@ -895,7 +1044,6 @@ body {
     width: 292px;
   }
 
-  /* --- Pricing --- */
   .pricing__deco { display: none; }
 
   .pricing { min-height: 900px; }
@@ -918,7 +1066,6 @@ body {
 
   .plan__price-value { font-size: 2.25rem; }
 
-  /* --- Footer --- */
   .footer {
     height: auto;
     min-height: 350px;
@@ -929,10 +1076,8 @@ body {
   }
 }
 
-/* ======================== MOBILE ======================== */
 @media (max-width: 768px) {
 
-  /* --- Navbar --- */
   .navbar {
     width: auto;
     left: 20px;
@@ -947,7 +1092,6 @@ body {
     width: auto;
   }
 
-  /* --- Hero --- */
   .hero { height: 747px; }
 
   .hero::before {
@@ -979,7 +1123,6 @@ body {
     font-size: 0.875rem;
   }
 
-  /* Message section */
   .hero__message {
     width: 100%;
     height: 251px;
@@ -995,7 +1138,6 @@ body {
     line-height: 1.4;
   }
 
-  /* Mystery icons — repositioned for 375×251 message section */
   .mystery--ouija {
     width: 32px;
     height: 32px;
@@ -1018,7 +1160,6 @@ body {
     transform: translate(calc(-50% + 142.64px), calc(-50% + 68.99px)) rotate(15deg);
   }
 
-  /* --- Kit --- */
   .kit { height: 631px; }
 
   .kit::before {
@@ -1048,25 +1189,21 @@ body {
     font-size: 0.875rem;
   }
 
-  /* Kit display: 375×319px starting at top 224px */
   .kit__display {
     width: 375px;
     height: 319px;
     top: 224px;
   }
 
-  /* Labels — repositioned for 375×319 container */
   .kit__label { font-size: 0.625rem; }
   .kit__label--book  { left: 55px;  top: 25px;  }
   .kit__label--brooch  { left: 51px;  top: 154px; }
   .kit__label--bookmark { left: 264px; top: 300px; }
 
-  /* Arrows — posições do Figma mobile (display 375×319) */
   .kit__arrow--top    { left: 41.41px;  top: 48.09px;  width: 58.74px; height: 10.1px;  }
   .kit__arrow--middle { left: 25.81px;  top: 177.51px; width: 35.29px; height: 42.75px; }
   .kit__arrow--down   { left: 260.63px; top: 242.81px; width: 48.96px; height: 50.99px; }
 
-  /* Images — rescaled and repositioned */
   .kit__bookmark-purple {
     left: 270px;
     top: 64px;
@@ -1092,7 +1229,6 @@ body {
     width: 157px;
   }
 
-  /* --- Pricing --- */
   .pricing__deco { display: none; }
 
   .pricing {
@@ -1120,10 +1256,8 @@ body {
   }
   .pricing__table::-webkit-scrollbar { display: none; }
 
-  /* Price font — smaller to avoid wrapping inside 272px card */
   .plan__price-value { font-size: 2rem; }
 
-  /* Remove rotations on mobile */
   .plan--mensal { transform: none; }
   .plan--anual  { transform: none; }
 
@@ -1134,10 +1268,8 @@ body {
     scroll-snap-align: center;
   }
 
-  /* No bunny on mobile */
   .plan__bunny { display: none; }
 
-  /* --- Footer --- */
   .footer {
     height: auto;
     min-height: 415px;
